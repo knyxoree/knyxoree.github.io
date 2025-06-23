@@ -1,0 +1,340 @@
+/* ////////////////////////////////////////
+
+Your custom css here
+
+/////////////////////////////////////////*/
+
+.link-slide {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  transition: all 0.3s ease;
+}
+
+.link-slide:hover {
+  transform: translateY(-3px);
+  color: rgb(161, 183, 255);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 5px 5px;
+  font-size: 10px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#backToTop:hover {
+  background-color: #ffffff;
+  transform: scale(1.1);
+}
+
+#backToTop.show {
+  opacity: 1;
+}
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .project-card {
+      display: block; /* agar seluruh <a> bisa jadi block seperti div */
+      text-decoration: none;
+      color: inherit;
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 1rem;
+      width: 300px;
+      box-shadow: 0 0px 0px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0px   cv  0px rgba(0,0,0,0.1);
+    }
+
+    .project-title {
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+
+    .project-type {
+      font-size: 0.9rem;
+      color: #666;
+      margin: 0.3rem 0;
+    }
+
+    .project-date {
+      font-size: 0.8rem;
+      color: #aaa;
+    }
+
+    .project-status {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.3rem 0.6rem;
+      font-size: 0.75rem;
+      border-radius: 4px;
+      font-weight: 500;
+      color: white;
+    }
+
+    .completed {
+      background-color: #28a745;
+    }
+
+    .in-development {
+      background-color: #ff9800;
+    }
+
+/* Lingkaran dasar */
+.circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 10px;
+  margin-bottom: 10px;
+  margin-top: 0px;
+}
+
+/* Warna */
+.application { background-color: #99d6ff; }
+.language { background-color: #a4ffca; }
+.rl { background-color: #d48aff; }
+.computer { background-color: #555555; }
+.show-all { background-color: #000000; }
+
+/* Bungkus lingkaran + teks */
+.circle-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* Teks (tooltip) */
+.tooltip {
+  visibility: hidden;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px 8px;
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 12px;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Saat disentuh/diarahkan */
+.circle-wrapper:hover .tooltip,
+.circle-wrapper:focus-within .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+    
+ .skill-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      
+    }
+
+    .skill-card {
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 1rem;
+      width: 210px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .skill-name {
+      font-size: 1rem;
+      font-weight: bold;
+      margin-bottom: 0.4rem;
+    }
+
+    .skill-level {
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    .application { border-left: 5px solid #99d6ff; }
+    .language { border-left: 5px solid #a4ffca; }
+    .rl   { border-left: 5px solid #d48aff; }
+    .computer   { border-left: 5px solid #555555; }
+
+
+.custom-folder-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  padding: 20px;
+}
+
+.folder-card {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  height: 500px;
+  margin: 20px; /* ✅ Tambahkan jarak antar card */
+  /* Remove direct box-shadow from the wrapper */
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.25)) drop-shadow(0 6px 6px rgba(0, 0, 0, 0.22));
+  transition: filter 0.3s ease-in-out;
+}
+
+.folder-card:hover {
+  filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.4)) drop-shadow(0 10px 10px rgba(0, 0, 0, 0.3));
+}
+
+.folder-shape {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  overflow: hidden;
+  clip-path: url(#folder-shape);
+  /* No box-shadow here as we're using filter: drop-shadow on the wrapper */
+}
+
+.card-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.top-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 12px;
+  text-decoration: none;
+  z-index: 2;
+}
+
+.destination-name {
+  position: absolute;
+  top: 70px;
+  left: 25px;
+  font-size: 42px;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  z-index: 2;
+}
+
+.bottom-bar {
+  position: absolute;
+  bottom: 25px;
+  left: 15px;
+  right: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px 16px;
+  border-radius: 30px;
+  z-index: 2;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.location-icon {
+  color: #ff5252;
+  margin-right: 5px;
+}
+
+.book-btn {
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-weight: bold;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.folder-bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0) 40%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  z-index: 1;
+}
+
+/* Media Queries for responsive height */
+@media (max-width: 768px) {
+  .folder-card {
+    height: 450px;
+  }
+}
+
+@media (max-width: 480px) {
+  .folder-card {
+    height: 400px;
+  }
+  .destination-name {
+    font-size: 36px;
+    top: 60px;
+  }
+}
+
+@media (max-width: 360px) {
+  .folder-card {
+    height: 350px;
+  }
+  .destination-name {
+    font-size: 32px;
+    top: 50px;
+  }
+}
