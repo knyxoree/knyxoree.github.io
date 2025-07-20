@@ -106,16 +106,13 @@ function grid() {
     }
 
     var items_width = Math.floor(container_width / cols - margin);
-    // Jangan atur height secara paksa, biarkan pakai aspect-ratio di CSS
-$(this).css('height', '');
+    var items_height = Math.floor(items_width * height);
     var items_double_height = items_height * double_height;
     var items_margin = Math.floor(margin / 2);
 
     items.each(function () {
-      $(this).css({
-  width: items_width + 'px',
-  height: '', // biarkan tingginya otomatis dari CSS aspect-ratio
-});
+      $(this).css('width', items_width + 'px');
+      $(this).css('height', items_height + 'px');
       $(this).css('margin', items_margin + 'px');
 
       if (!height) $(this).css('height', 'auto');
