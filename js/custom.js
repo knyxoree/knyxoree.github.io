@@ -120,6 +120,12 @@ function grid() {
         var items_double_height = items_height * double_height;
         var items_margin = Math.floor(margin / 2);
 
+        // --- Randomisasi elemen entry sebelum diproses oleh Isotope ---
+var items = active_container.find('.entry').sort(function () {
+  return 0.5 - Math.random();
+});
+active_container.empty().append(items);
+
         items.each(function() {
             $(this).css('width', items_width + 'px');
             $(this).css('height', items_height + 'px');
@@ -238,23 +244,3 @@ document.getElementById('tahun').textContent = new Date().getFullYear();
   });
 
   window.addEventListener('DOMContentLoaded', showAllCards);
-
-
-// Random skill
-document.addEventListener("DOMContentLoaded", function () {
-  const grid = document.querySelector(".grid");
-  const entries = Array.from(grid.querySelectorAll(".entry"));
-
-  // Acak urutan elemen
-  for (let i = entries.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [entries[i], entries[j]] = [entries[j], entries[i]];
-  }
-
-  // Hapus semua entry dari grid
-  grid.innerHTML = "";
-
-  // Masukkan kembali entry dalam urutan acak
-  entries.forEach(entry => grid.appendChild(entry));
-});
-
