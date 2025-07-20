@@ -238,3 +238,23 @@ document.getElementById('tahun').textContent = new Date().getFullYear();
   });
 
   window.addEventListener('DOMContentLoaded', showAllCards);
+
+
+// Random skill
+document.addEventListener("DOMContentLoaded", function () {
+  const grid = document.querySelector(".grid");
+  const entries = Array.from(grid.querySelectorAll(".entry"));
+
+  // Acak urutan elemen
+  for (let i = entries.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [entries[i], entries[j]] = [entries[j], entries[i]];
+  }
+
+  // Hapus semua entry dari grid
+  grid.innerHTML = "";
+
+  // Masukkan kembali entry dalam urutan acak
+  entries.forEach(entry => grid.appendChild(entry));
+});
+
