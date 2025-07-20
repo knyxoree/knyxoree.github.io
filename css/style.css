@@ -368,10 +368,10 @@ Header intro
   height: 100%;
 }
 .entry {
-  aspect-ratio: 4 / 3; /* atau 3 / 2 atau 16 / 9 sesuai rasio yang kamu mau */
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
   height: auto !important;
 }
-
 
 
 /* Footer */
