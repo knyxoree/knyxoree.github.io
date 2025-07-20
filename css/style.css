@@ -360,6 +360,19 @@ Header intro
     padding: 0px 0 22px;
 }
 
+.entry-image {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+.entry {
+  aspect-ratio: 4 / 3; /* atau 16/9, atau 1/1, tergantung selera */
+  position: relative;
+}
+
+
 
 /* Footer */
 
