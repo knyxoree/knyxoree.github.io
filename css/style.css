@@ -337,7 +337,7 @@ Header intro
     position: relative;
     top: 15px;
     -webkit-transition: all .5s cubic-bezier(0.4, .2, 0, 1) .3s;
-    transition: all .5s cubic-bezer(0.4, .2, 0, 1) .3s;
+    transition: all .5s cubic-bezier(0.4, .2, 0, 1) .3s;
     color: #fff;
 }
 
@@ -360,8 +360,18 @@ Header intro
     padding: 0px 0 22px;
 }
 
-
-
+.entry-image {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+.entry {
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  height: auto !important;
+}
 
 
 /* Footer */
