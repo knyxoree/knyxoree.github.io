@@ -87,54 +87,84 @@ function imageBG() {
 /** ===================== */
 
 function grid() {
+  var container = $('.grid');
 
-    var container = $('.grid');
+  for (var i = 0; i < container.length; i++) {
+    var active_container = $(container[i]);
+    var container_width = active_container.width();
 
-    for (var i = 0; i < container.length; i++) {
-        var active_container = $(container[i]);
-        var container_width = active_container.width();
+    // Ambil dan acak elemen .entry
+    var items = active_container.find('.entry').get();
+    items.sort(function () {
+      return Math.random() - 0.5;
+    });
 
-        var items = active_container.find('.entry');
+    // Kosongkan container dan masukkan ulang elemen secara acak
+    active_container.empty();
+    $.each(items, function (i, item) {
+      active_container.append(item);
+    });
 
-        var cols = parseInt(active_container.data('cols'), 10);
-        var margin = parseInt(active_container.data('margin'), 10);
-        var height = parseFloat(active_container.data('height'));
-        var double_height = parseFloat(active_container.data('double-height'));
+    // Setelah di-append ulang, ambil kembali .entry untuk pengaturan ukuran
+    items = active_container.find('.entry');
 
-        if (!margin) margin = 0;
-        if (!double_height) double_height = 2;
+    var cols = parseInt(active_container.data('cols'), 10);
+    var margin = parseInt(active_container.data('margin'), 10);
+    var height = parseFloat(active_container.data('height'));
+    var double_height = parseFloat(active_container.data('double-height'));
 
-        // set margins to the container
-        active_container.css('margin', -Math.floor(margin / 2) + 'px');
+    if (!margin) margin = 0;
+    if (!double_height) double_height = 2;
 
-        if (ww >= 1000) {
-            if (!cols) cols = 3;
-        } else if (ww >= 700) {
-            if (cols !== 1) cols = 2;
-        } else {
-            cols = 1;
-        }
+    active_container.css('margin', -Math.floor(margin / 2) + 'px');
 
-        var items_width = Math.floor((container_width / cols) - margin);
-        var items_height = Math.floor(items_width * height);
-        var items_double_height = items_height * double_height;
-        var items_margin = Math.floor(margin / 2);
+    if (ww >= 1000) {
+      if (!cols) cols = 3;
+    } else if (ww >= 700) {
+      if (cols !== 1) cols = 2;
+    } else {
+      cols = 1;
+    }
 
-        // --- Randomisasi elemen entry sebelum diproses oleh Isotope ---
-var items = active_container.find('.entry').sort(function () {
-  return 0.5 - Math.random();
-});
-active_container.empty().append(items);
+    var items_width = Math.floor((container_width / cols) - margin);
+    var items_height = Math.floor(items_width * height);
+    var items_double_height = items_height * double_height;
+    var items_margin = Math.floor(margin / 2);
 
-        items.each(function() {
-            $(this).css('width', items_width + 'px');
-            $(this).css('height', items_height + 'px');
-            $(this).css('margin', items_margin + 'px');
+    items.each(function () {
+      $(this).css('width', items_width + 'px');
+      $(this).css('height', items_height + 'px');
+      $(this).css('margin', items_margin + 'px');
 
-            if (!height) $(this).css('height', 'auto');
-            if ($(this).hasClass('w2') && ww >= 500) $(this).css('width', (items_width * 2) + (items_margin * 2) + 'px');  /* Add w2 or h2 to the portfolio item for varoius layout sizes */
-            if ($(this).hasClass('h2') && ww >= 500) $(this).css('height', items_double_height + (items_margin * 2) + 'px');
-        });
+      if (!height) $(this).css('height', 'auto');
+      if ($(this).hasClass('w2') && ww >= 500) {
+        $(this).css('width', (items_width * 2) + (items_margin * 2) + 'px');
+      }
+      if ($(this).hasClass('h2') && ww >= 500) {
+        $(this).css('height', items_double_height + (items_margin * 2) + 'px');
+      }
+    });
+
+    // Inisialisasi isotope setelah urutan dan ukuran sudah beres
+    active_container.isotope({
+      itemSelector: '.entry',
+      transitionDuration: '.2s',
+      hiddenStyle: { opacity: 0 },
+      visibleStyle: { opacity: 1 },
+      masonry: {
+        columnWidth: items_width + margin
+      }
+    });
+
+    $('#filters li a').on('click', function (e) {
+      e.preventDefault();
+      var filter = $(this).attr('href');
+      $('#filters li a').removeClass('active');
+      $(this).addClass('active');
+      active_container.isotope({ filter: filter });
+    });
+  }
+}
 
         // isotope
         active_container.isotope({
