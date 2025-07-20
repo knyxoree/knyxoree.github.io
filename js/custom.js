@@ -106,7 +106,8 @@ function grid() {
     }
 
     var items_width = Math.floor(container_width / cols - margin);
-    var items_height = Math.floor(items_width * height);
+    // Jangan atur height secara paksa, biarkan pakai aspect-ratio di CSS
+$(this).css('height', '');
     var items_double_height = items_height * double_height;
     var items_margin = Math.floor(margin / 2);
 
