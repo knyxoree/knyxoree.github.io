@@ -337,7 +337,7 @@ Header intro
     position: relative;
     top: 15px;
     -webkit-transition: all .5s cubic-bezier(0.4, .2, 0, 1) .3s;
-    transition: all .5s cubic-bezier(0.4, .2, 0, 1) .3s;
+    transition: all .5s cubic-bezer(0.4, .2, 0, 1) .3s;
     color: #fff;
 }
 
@@ -360,54 +360,7 @@ Header intro
     padding: 0px 0 22px;
 }
 
-/* Responsive .entry-image fix */
-.entry {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
-}
 
-.entry-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* Ensure grid respects responsiveness */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-}
-
-/* Optional: make work-entry-content responsive too */
-.work-entry-content {
-  left: 10%;
-  right: 10%;
-  bottom: 10%;
-}
-
-@media (max-width: 768px) {
-  .work-entry-content {
-    left: 8%;
-    right: 8%;
-    bottom: 8%;
-  }
-
-  .work-entry-title {
-    font-size: 18px;
-  }
-
-  .work-entry-cat {
-    font-size: 12px;
-  }
-}
 
 
 
