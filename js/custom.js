@@ -111,8 +111,10 @@ function grid() {
     var items_margin = Math.floor(margin / 2);
 
     items.each(function () {
-      $(this).css('width', items_width + 'px');
-      $(this).css('height', items_height + 'px');
+      $(this).css({
+  width: items_width + 'px',
+  height: '', // biarkan tingginya otomatis dari CSS aspect-ratio
+});
       $(this).css('margin', items_margin + 'px');
 
       if (!height) $(this).css('height', 'auto');
