@@ -159,44 +159,52 @@ Your custom css here
   opacity: 1;
 }
 
-    
- .skill-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      
-    }
+    .skill-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
 
-    .skill-card {
-      background-color: #ffffff;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      padding: 1rem;
-      width: 210px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      text-align: center;
-      transition: transform 0.2s ease;
-    }
+@media (max-width: 600px) {
+  .skill-container {
+    grid-template-columns: repeat(2, 1fr); /* Paksa 2 kolom di HP */
+  }
+}
 
-    .skill-card:hover {
-      transform: translateY(-4px);
-    }
+.skill-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  text-align: center;
+  transition: transform 0.2s ease;
+  /* Jangan pakai fixed width */
+  width: 100%; 
+  box-sizing: border-box;
+}
 
-    .skill-name {
-      font-size: 1rem;
-      font-weight: bold;
-      margin-bottom: 0.4rem;
-    }
+.skill-card:hover {
+  transform: translateY(-4px);
+}
 
-    .skill-level {
-      font-size: 0.85rem;
-      color: #666;
-    }
+.skill-name {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.4rem;
+}
 
-    .application { border-left: 5px solid #99d6ff; }
-    .language { border-left: 5px solid #a4ffca; }
-    .rl   { border-left: 5px solid #d48aff; }
-    .computer   { border-left: 5px solid #555555; }
+.skill-level {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.application { border-left: 5px solid #99d6ff; }
+.language    { border-left: 5px solid #a4ffca; }
+.rl          { border-left: 5px solid #d48aff; }
+.computer    { border-left: 5px solid #555555; }
+
 
 
 .custom-folder-grid {
