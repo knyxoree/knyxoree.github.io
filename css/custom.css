@@ -178,16 +178,27 @@ Your custom css here
 }
 
     
+ 
+
+.custom-folder-grid {
+  display: grid;
+  grid-template-col box-shadow from the wrapper */
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.25)) drop-shadow(0 6px 6px rgba(0, 0, 0, 0in .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+    
  .skill-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 1rem;
-  justify-content: center;
+  padding: 1rem;
 }
 
 @media (max-width: 600px) {
   .skill-container {
-    grid-template-columns: repeat(2, 1fr); /* 2 kolom di HP */
+    grid-template-columns: repeat(2, 1fr); /* Paksa 2 kolom di HP */
   }
 }
 
@@ -199,6 +210,9 @@ Your custom css here
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
   text-align: center;
   transition: transform 0.2s ease;
+  /* Jangan pakai fixed width */
+  width: 100%; 
+  box-sizing: border-box;
 }
 
 .skill-card:hover {
@@ -224,13 +238,7 @@ Your custom css here
 
 .custom-folder-grid {
   display: grid;
-  grid-template-col box-shadow from the wrapper */
-  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.25)) drop-shadow(0 6px 6px rgba(0, 0, 0, 0.22));
-  transition: filter 0.3s ease-in-out;
-}
-
-.folder-card:hover {
-  filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.4)) drop-shadow(0 10px 10px rgba(0, 0, 0, 0.3));
+  grid-template-col4)) drop-shadow(0 10px 10px rgba(0, 0, 0, 0.3));
 }
 
 .folder-shape {
