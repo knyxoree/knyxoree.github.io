@@ -160,44 +160,7 @@ Your custom css here
 }
 
     
- .skill-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      
-    }
-
-    .skill-card {
-      background-color: #ffffff;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      padding: 1rem;
-      width: 210px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      text-align: center;
-      transition: transform 0.2s ease;
-    }
-
-    .skill-card:hover {
-      transform: translateY(-4px);
-    }
-
-    .skill-name {
-      font-size: 1rem;
-      font-weight: bold;
-      margin-bottom: 0.4rem;
-    }
-
-    .skill-level {
-      font-size: 0.85rem;
-      color: #666;
-    }
-
-    .application { border-left: 5px solid #99d6ff; }
-    .language { border-left: 5px solid #a4ffca; }
-    .rl   { border-left: 5px solid #d48aff; }
-    .computer   { border-left: 5px solid #555555; }
-
+ 
 
 .custom-folder-grid {
   display: grid;
@@ -209,11 +172,59 @@ Your custom css here
 
 .folder-card {
   position: relative;
-  width: 100%;
-  max-width: 360px;
-  height: 500px;
-  margin: 20px; /* ✅ Tambahkan jarak antar card */
-  /* Remove direct box-shadow from the wrapper */
+ in .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+    
+ .skill-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1rem;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .skill-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 kolom di HP */
+  }
+}
+
+.skill-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+}
+
+.skill-name {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.4rem;
+}
+
+.skill-level {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.application { border-left: 5px solid #99d6ff; }
+.language    { border-left: 5px solid #a4ffca; }
+.rl          { border-left: 5px solid #d48aff; }
+.computer    { border-left: 5px solid #555555; }
+
+
+.custom-folder-grid {
+  display: grid;
+  grid-template-col box-shadow from the wrapper */
   filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.25)) drop-shadow(0 6px 6px rgba(0, 0, 0, 0.22));
   transition: filter 0.3s ease-in-out;
 }
